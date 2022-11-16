@@ -1,0 +1,16 @@
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+.flex-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}

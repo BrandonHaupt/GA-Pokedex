@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pokedex</title>
+    <%- include("./partials/head.ejs") %>
+  </head>
+  <body>
+    <div class="container">
+        <% for(let i = 0; i < pokeData.length; i++) { %> 
+            <div class="card">
+                <a href="/pokemons/<%=i %>"> <%=pokeData[i].img %> </a>
+            </div>
+        <% } %> 
+    </div>
+  </body>
+</html>

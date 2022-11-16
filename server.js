@@ -18,7 +18,7 @@ app.get('/', (req,res) => res.redirect('/pokemons'))
 app.get('/pokemons', (req,res)=> {
     res.render('index.ejs', 
         {
-            allPokemons:pokemons   
+            pokeData:pokemons   
         }
     )
 })
@@ -40,6 +40,15 @@ app.get('/pokemons/:id/edit', (req,res) => {
     )
 })
 
+// UPDATE ROUTE
+app.put('/pokemons/:id', (req,res) => {
+    // Updating Pokemons
+    pokemons[req.params.id] = req.body
+
+    // Redirecting back to index route
+    res.redirect('/pokemons')
+})
+
 
 // DELETE ROUTE 
 app.delete('/pokemons/:id', (req,res) => {
@@ -52,7 +61,7 @@ app.delete('/pokemons/:id', (req,res) => {
 app.get(`/pokemons/:id`, (req,res) => {
     res.render('show.ejs', 
         {
-            pokemon: pokemons[req.params.id],
+            pokeData: pokemons[req.params.id],
             id: req.params.id
         }
     )

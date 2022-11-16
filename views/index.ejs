@@ -6,8 +6,21 @@
     <%- include("./partials/head.ejs") %>
   </head>
   <body>
+    <div class="container flex-box row">
+        <h1 class="two ten">Pokedex</h1>
+        <a class="button button-primary" href="">Add New Pokemon</a>
+    </div>
     <div class="container">
-        <h1>Pokemons!</h1>
+        <% for(let i = 0; i < pokeData.length; i++) { %> 
+            <div class="card">
+                <a href="/pokemons/<%=i %>"> <%=pokeData[i].img %> </a>
+                <a href="/pokemons/<%=i %>"> <%=pokeData[i].name %> </a>
+                <a class="button button-primary" href="/pokemons/<%=i %>/edit ">Edit</a>
+                <form action="/pokemons/<%=i %>?_method=DELETE" method="POST">
+                    <input class="button-primary"" type="submit" value="DELETE">
+                </form>
+            </div>
+        <% } %> 
     </div>
   </body>
 </html>
