@@ -6,21 +6,34 @@
     <%- include("./partials/head.ejs") %>
   </head>
   <body>
-    <div class="container flex-box row">
-        <h1 class="two ten">Pokedex</h1>
-        <a class="button button-primary" href="">Add New Pokemon</a>
+    <main>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="u-full-width flex-box">
+            <h1 class="two ten">Pokedex</h1>
+            <a class="button button-primary" href="">Add New Pokemon</a>
+          </div>
+              <% for(let i = 0; i < pokeData.length; i++) { %> 
+                <% let data = pokeData[i] %> 
+                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                      <div class="card shadow-sm">
+                        <a href="/pokemons/<%=i %>"><img class="bd-placeholder-img card-img-top" src="<%=data.img %>" alt="a picture of <%=data.name %>"></a>
+                        <div class="card-body">
+                            <a class="card-text" href="/pokemons/<%=i %>"> <%=data.name %> </a>
+                            <div class="d-flex justify-content-between align-items-center">
+                              <a class="button font-white" href="/pokemons/<%=i %>/edit ">Edit</a>
+                              <form action="/pokemons/<%=i %>?_method=DELETE" method="POST">
+                                  <input class="button font-white" type="submit" value="DELETE">
+                              </form>
+                            </div>
+                        </div>
+                      </div>
+                    </div>  
+                  </div>
+              <% } %> 
+        </div> 
     </div>
-    <div class="container">
-        <% for(let i = 0; i < pokeData.length; i++) { %> 
-            <div class="card">
-                <a href="/pokemons/<%=i %>"> <%=pokeData[i].img %> </a>
-                <a href="/pokemons/<%=i %>"> <%=pokeData[i].name %> </a>
-                <a class="button button-primary" href="/pokemons/<%=i %>/edit ">Edit</a>
-                <form action="/pokemons/<%=i %>?_method=DELETE" method="POST">
-                    <input class="button-primary"" type="submit" value="DELETE">
-                </form>
-            </div>
-        <% } %> 
-    </div>
+ 
   </body>
 </html>

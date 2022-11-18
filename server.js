@@ -11,6 +11,7 @@ app.use(methodOverride('_method'))
 // Allows us to use the styles.css
 app.use('/static', express.static("public"))
 
+
 // HOME ROUTE
 app.get('/', (req,res) => res.redirect('/pokemons'))
 
