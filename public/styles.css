@@ -13,6 +13,17 @@ body {
 .container {
     padding: 0 5%;
 }
+
+p {
+    font-size: 1.2rem;
+}
+/* 
+.d-flex {
+    width: 90%;
+    padding: 0 10%;
+} */
+
+
 /* 
 
 .card {

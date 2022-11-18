@@ -6,12 +6,43 @@
     <%- include("./partials/head.ejs") %>
   </head>
   <body>
-    <div class="container">
-        <% for(let i = 0; i < pokeData.length; i++) { %> 
-            <div class="card">
-                <a href="/pokemons/<%=i %>"> <%=pokeData[i].img %> </a>
-            </div>
-        <% } %> 
+    <main>
+      <nav>
+        <a class="button" href="/pokemons">Back</a>
+    </nav>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="flex-box">
+            <h1 class="two ten">Pokedex</h1>
+            <a class="button button-primary" href="">Add New Pokemon</a>
+          </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              <div class="col">
+                <div class="card shadow-sm">
+                  <h1 class="card-text mb-3 justify-content-center"><%=pokeData.name %></h1>
+                  <img class="bd-placeholder-img card-img-top" src="<%=pokeData.img %>" alt="a picture of <%=pokeData.name %>">
+
+                  <div class="card-body">
+                      <div class="d-flex flex-column justify-content-start align-items-star mb-3">
+                        <h3>Type: </h3>
+                        <p><%=pokeData.type[0] %></p>
+                        <p><%=pokeData.type[1] %></p>
+                      </div>
+                      <div class="d-flex flex-column justify-content-start align-items-star mb-3">
+                        <h3>Stats: </h3>
+                        <p>HP: <%=pokeData.stats.hp %></p>
+                        <p>ATT: <%=pokeData.stats.attack %></p>
+                        <p>DEF: <%=pokeData.stats.defense %></p>
+                        <p>SP ATT: <%=pokeData.stats.spattack %></p>
+                        <p>SP DEF: <%=pokeData.stats.spdefense%></p>
+                        <p>SPEED: <%=pokeData.stats.speed%></p>
+                      </div>
+                  </div>
+                </div>
+              </div>  
+            </div> 
+        </div> 
     </div>
+ 
   </body>
 </html>

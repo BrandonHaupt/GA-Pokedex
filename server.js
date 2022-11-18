@@ -25,10 +25,8 @@ app.get('/pokemons', (req,res)=> {
 })
 
 // CREATE A ROUTE - Recieves data from the form on new.ejs and pushes it to the body of our index.ejs
-app.post('/pokemons', (req,res) => {
-    pokemons.push(req.body)
-
-    res.redirect('/pokemons')
+app.get('/pokemons/new', (req,res) => {
+   res.render('new.ejs')
 })
 
 // EDIT ROUTE 
@@ -53,7 +51,7 @@ app.put('/pokemons/:id', (req,res) => {
 
 // DELETE ROUTE 
 app.delete('/pokemons/:id', (req,res) => {
-    res.splice(req.params.id, 1)
+    pokemons.splice(req.params.id, 1)
     res.redirect('/pokemons')
 })
 
@@ -67,7 +65,6 @@ app.get(`/pokemons/:id`, (req,res) => {
         }
     )
 })
-
 
 
 // Allows us to access local server
