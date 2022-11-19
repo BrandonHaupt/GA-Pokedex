@@ -15,7 +15,11 @@ app.use('/static', express.static("public"))
 // HOME ROUTE
 app.get('/', (req,res) => res.redirect('/pokemons'))
 
-// INDEX ROUTE
+
+
+//////////////////
+//    INDEX    //
+/////////////////
 app.get('/pokemons', (req,res)=> {
     res.render('index.ejs', 
         {
@@ -24,12 +28,29 @@ app.get('/pokemons', (req,res)=> {
     )
 })
 
-// CREATE A ROUTE - Recieves data from the form on new.ejs and pushes it to the body of our index.ejs
-app.get('/pokemons/new', (req,res) => {
-   res.render('new.ejs')
+
+////////////////
+//    NEW    //
+///////////////
+app.get('/pokemons/new', (req, res)=> {
+    res.render('new.ejs')
 })
 
-// EDIT ROUTE 
+
+///////////////////
+//    CREATE    //
+//////////////////
+app.get('/pokemons', (req,res) => {
+   pokemons.push(req.body)
+
+   //redirects back to index page
+   res.redirect('/pokemons')
+})
+
+
+//////////////////
+//    EDIT     //
+/////////////////
 app.get('/pokemons/:id/edit', (req,res) => {
     res.render('edit.ejs', 
         {
@@ -39,7 +60,10 @@ app.get('/pokemons/:id/edit', (req,res) => {
     )
 })
 
-// UPDATE ROUTE
+
+///////////////////
+//    UPDATE    //
+//////////////////
 app.put('/pokemons/:id', (req,res) => {
     // Updating Pokemons
     pokemons[req.params.id] = req.body
@@ -49,14 +73,26 @@ app.put('/pokemons/:id', (req,res) => {
 })
 
 
-// DELETE ROUTE 
+///////////////////
+//    DELETE    //
+//////////////////
 app.delete('/pokemons/:id', (req,res) => {
     pokemons.splice(req.params.id, 1)
     res.redirect('/pokemons')
 })
 
 
-// SHOW ROUTE Everything else goes above
+
+
+
+
+
+
+
+/////////////////
+//    SHOW    //
+////////////////
+//***** KEEP THIS AT BOTTOM *****
 app.get(`/pokemons/:id`, (req,res) => {
     res.render('show.ejs', 
         {
@@ -67,7 +103,9 @@ app.get(`/pokemons/:id`, (req,res) => {
 })
 
 
-// Allows us to access local server
+/////////////////////////////////////////
+//          PORT LISTENER              //
+/////////////////////////////////////////
 app.listen(PORT, ()=> {
     console.log(`Listening on port: ${PORT}`)
 })

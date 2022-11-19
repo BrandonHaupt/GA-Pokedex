@@ -1,44 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <%- include("./partials/head.ejs") %>
-    <title>Edit Pokemon</title>
-</head>
-<body>
+    <title>Create New Pokemon</title>
+  </head>
+  <body>
     <div class="container">
-        <h1>Update <%=pokemon.name  %> </h1>
-        <nav>
-            <a class="button" href="/pokemons">Back</a>
-        </nav>
-        <form action="/pokemons" method="POST">
-            <div class="row">
-                <div class="six columns">
+      <nav>
+        <a class="button" href="/pokemons">Back</a>
+      </nav>
+      <form action="/pokemons" method="POST">
+        <div class="row">
+          <div class="six columns">
+            <h2>ID</h2>
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="Pokemon ID"
+              name="pokemon.id"
+            />
 
-                    <h2>ID</h2>
-                    <input class="u-full-width" type="text" placeholder="Pokemon ID" name="pokemon.id">
+            <h2>Name</h2>
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="Pokemon Name"
+              name="pokemon.name"
+            />
 
-                    <h2>Name</h2>
-                    <input class="u-full-width" type="text" placeholder="Pokemon Name" name="pokemon.name">
+            <h2>Type</h2>
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="Pokemon Type 1"
+              name="pokemon.type[0]"
+            />
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="Pokemon Type 2"
+              name="pokemon.type[1]"
+            />
 
-                    <h2>Type</h2>
-                    <input class="u-full-width" type="text" placeholder="Pokemon Type 1" name="pokemon.type[0]">
-                    <input class="u-full-width" type="text" placeholder="Pokemon Type 2" name="pokemon.type[1]">
+            <h2>Stats</h2>
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="HP"
+              name="pokemon.stats.hp"
+            />
 
-                    <h2>Stats</h2>
-                    <input class="u-full-width" type="text" placeholder="HP" name="pokemon.stats.hp">
-            
-                    <input class="u-full-width" type="text" placeholder="Attack" name="pokemon.stats.attack">
-               
-                    <input class="u-full-width" type="text" placeholder="Defense" name="pokemon.stats.defense">
-               
-                    <input class="u-full-width" type="text" placeholder="SPAttack" name="pokemon.stats.spattack">
-                    <input class="u-full-width" type="text" placeholder="SP Defense" name="pokemon.stats.spdefense">
-                    <input class="u-full-width" type="text" placeholder="Speed" name="pokemon.stats.speed">
-                </div>
-            </div>
-            <input class="button" type="submit" value="UPDATE <%=pokemon.name %> ">
-        </form>
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="Attack"
+              name="pokemon.stats.attack"
+            />
+
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="Defense"
+              name="pokemon.stats.defense"
+            />
+
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="SPAttack"
+              name="pokemon.stats.spattack"
+            />
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="SP Defense"
+              name="pokemon.stats.spdefense"
+            />
+            <input
+              class="u-full-width"
+              type="text"
+              placeholder="Speed"
+              name="pokemon.stats.speed"
+            />
+          </div>
+        </div>
+        <input class="button" type="submit" value="CREATE NEW POKEMON" />
+      </form>
     </div>
-</body>
+  </body>
 </html>
