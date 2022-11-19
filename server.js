@@ -40,11 +40,15 @@ app.get('/pokemons/new', (req, res)=> {
 ///////////////////
 //    CREATE    //
 //////////////////
-app.get('/pokemons', (req,res) => {
-   pokemons.push(req.body)
-
-   //redirects back to index page
-   res.redirect('/pokemons')
+app.post('/pokemons', (req,res) => {
+    if (req.body === undefined) {
+        req.body === '#'
+    } else {
+        pokemons.push(req.body)
+    }
+    
+    //redirects back to index page
+    res.redirect('/pokemons')
 })
 
 
