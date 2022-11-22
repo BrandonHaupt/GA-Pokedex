@@ -20,31 +20,33 @@
             <div class="justify-content-center">
                 <div class="pokeId">
                     <h2 class="display-6">ID</h2>
-                    <input class="" type="text" placeholder="Pokemon ID" name="pokemon.id">
+                    <input type="text" placeholder="Pokemon ID" name="id">
                 </div>
 
                 <div class="pokeName">
                     <h2 class="display-6">Name</h2>
-                    <input class="u-full-width" type="text" placeholder="Pokemon Name" name="pokemon.name">
+                    <input class="u-full-width" type="text" placeholder="Pokemon Name" name="name">
                 </div>
                   
                 <div class="pokeType">
                     <h2 class="display-6">Type</h2>
-                    <input class="u-full-width" type="text" placeholder="Pokemon Type 1" name="pokemon.type[0]">
-                    <input class="u-full-width" type="text" placeholder="Pokemon Type 2" name="pokemon.type[1]">
+                    <input class="u-full-width" type="text" placeholder="Pokemon Type 1" name="type[0]">
+                    <input class="u-full-width" type="text" placeholder="Pokemon Type 2" name="type[1]">
                 </div>
                     
                 <div class="pokeStats">
                     <h2 class="display-6">Stats</h2>
-                    <input class="u-full-width" type="text" placeholder="HP" name="pokemon.stats.hp">
+                    <input class="u-full-width" type="text" placeholder="HP" name="stats[hp]">
             
-                    <input class="u-full-width" type="text" placeholder="Attack" name="pokemon.stats.attack">
+                    <input class="u-full-width" type="text" placeholder="Attack" name="stats[attack]">
                
-                    <input class="u-full-width" type="text" placeholder="Defense" name="pokemon.stats.defense">
+                    <input class="u-full-width" type="text" placeholder="Defense" name="stats[defense]">
                
-                    <input class="u-full-width" type="text" placeholder="SPAttack" name="pokemon.stats.spattack">
-                    <input class="u-full-width" type="text" placeholder="SP Defense" name="pokemon.stats.spdefense">
-                    <input class="u-full-width" type="text" placeholder="Speed" name="pokemon.stats.speed">
+                    <input class="u-full-width" type="text" placeholder="SPAttack" name="stats[spattack]">
+
+                    <input class="u-full-width" type="text" placeholder="SP Defense" name="stats[spdefense]">
+
+                    <input class="u-full-width" type="text" placeholder="Speed" name="stats[speed]">
                 </div>  
             </div>
             <input class="btn btn-outline-success mt-3" type="submit" value="UPDATE <%=pokemon.name %> ">

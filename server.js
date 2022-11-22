@@ -46,7 +46,7 @@ app.post('/pokemons', (req,res) => {
     } else {
         pokemons.push(req.body)
     }
-    
+
     //redirects back to index page
     res.redirect('/pokemons')
 })
